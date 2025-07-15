@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- 🔄 Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
+
+  <main class="calc-wrap">
+    <header class="top-bar">
+      <h1>Scientific Calculator</h1>
+      <button id="toggle-theme">🌙</button>
+    </header>
+
+    <input id="display" readonly placeholder="0" />
+
+    <div class="controls">
+      <button id="voice-btn">🎙️ Voice</button>
+      <button id="export-btn">📤 Export (PDF)</button>
+    </div>
+
+    <div id="keypad" class="grid"></div>
+
+    <section class="graph-box">
+      <canvas id="graph"></canvas>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

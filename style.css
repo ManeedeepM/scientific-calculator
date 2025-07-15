@@ -1,0 +1,122 @@
+/* 🌌 Background video */
+.bg-video {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.25;
+  filter: blur(2px);
+}
+
+/* Root colors */
+:root {
+  --bg:   #f4f4f4;
+  --card: #ffffff;
+  --btn:  #e0e0e0;
+  --accent: #1e90ff;
+}
+
+/* Base layout */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Calculator box */
+.calc-wrap {
+  background: var(--card);
+  width: clamp(300px, 90vw, 380px);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 2;
+}
+
+/* Header */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar h1 { margin: 0; font-size: 1.1rem; }
+#toggle-theme {
+  border: none;
+  background: gold;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* Display */
+#display {
+  font-size: 1.9rem;
+  text-align: right;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #fafafa;
+  overflow-x: auto;
+}
+
+/* Buttons */
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+.controls button {
+  flex: 1;
+  padding: 0.55rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--btn);
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+/* Keypad grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.grid button {
+  padding: 0.9rem 0;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--btn);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.grid button:active { background: #cfcfcf; }
+
+/* Graph section */
+.graph-box {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+.graph-box canvas { width: 100%; }
+
+/* Dark mode */
+body.dark {
+  --bg:   #202124;
+  --card: #2b2b2b;
+  --btn:  #555;
+  color: #fff;
+}
+body.dark #display { background: #303134; color: #fff; }
+body.dark .graph-box { background: #303134; border-color: #555; }
+body.dark .controls button,
+body.dark .grid button { background: var(--btn); color: #fff; }
